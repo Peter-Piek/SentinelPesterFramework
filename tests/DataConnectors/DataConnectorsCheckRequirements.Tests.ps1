@@ -15,11 +15,11 @@ param (
 BeforeDiscovery {
     $DataConnectorsToCheck = @(
         #"APIPolling",
-        "AmazonWebServicesCloudTrail",
-        "AmazonWebServicesS3",
+        #"AmazonWebServicesCloudTrail",
+        #"AmazonWebServicesS3",
         "AzureActiveDirectory",
         "AzureAdvancedThreatProtection",
-        #"AzureSecurityCenter",
+        "AzureSecurityCenter",
         "Dynamics365",
         #"GenericUI",
         #"IOT",

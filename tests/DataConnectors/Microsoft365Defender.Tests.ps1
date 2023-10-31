@@ -38,6 +38,8 @@ Describe "Sentinel Dataconnectors" -Tag "DataConnector" {
         }
 
         It "<name> should have current data (<maxage>)" -ForEach @(
+            @{ Name = "SecurityIncident" ; MaxAge = "1d" }
+            @{ Name = "SecurityAlert" ; MaxAge = "1d" }
             @{ Name = "DeviceEvents" ; MaxAge = "1d" }
             @{ Name = "DeviceFileEvents" ; MaxAge = "1d" }
             @{ Name = "DeviceImageLoadEvents" ; MaxAge = "1d" }

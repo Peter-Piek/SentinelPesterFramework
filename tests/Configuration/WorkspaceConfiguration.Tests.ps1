@@ -30,8 +30,8 @@ Describe "Workspace Configuration" -Tag "Configuration", "Workspace" {
         $WorkspaceProperties.properties.retentionInDays | Should -Be 90
     }
 
-    It "Workspace capping should be disabled" {
-        $WorkspaceProperties.properties.workspaceCapping.dailyQuotaGb | Should -Be -1
+    It "Workspace capping should be enabled" {
+        $WorkspaceProperties.properties.workspaceCapping.dailyQuotaGb | Should -Be 15
     }
 
     It "Workspace access control mode should be `"Use resource or workspace permissions`"" {

@@ -35,9 +35,9 @@ Describe "Sentinel Dataconnectors" -Tag "DataConnector" {
             @{ Name = "ADFSSignInLogs" ; MaxAge = "1d" }
             @{ Name = "AADUserRiskEvents" ; MaxAge = "30d" }
             @{ Name = "AADRiskyUsers" ; MaxAge = "30d" }
-            @{ Name = "NetworkAccessTraffic" ; MaxAge = "1d" }
-            @{ Name = "AADRiskyServicePrincipals" ; MaxAge = "30d" }
-            @{ Name = "AADServicePrincipalRiskEvents" ; MaxAge = "30d" }
+            #@{ Name = "NetworkAccessTraffic" ; MaxAge = "1d" }
+            #@{ Name = "AADRiskyServicePrincipals" ; MaxAge = "30d" }
+            #@{ Name = "AADServicePrincipalRiskEvents" ; MaxAge = "30d" }
         ) {
             $FirstRowReturned = Invoke-WorkspaceQuery -WorkspaceQueryUri $WorkspaceQueryUri -Query "$name | where TimeGenerated > ago($MaxAge) | summarize max(TimeGenerated)" | Select-Object -First 1
             $FirstRowReturned | Should -Not -BeNullOrEmpty

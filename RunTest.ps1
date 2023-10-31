@@ -4,9 +4,9 @@ if ( -not ( Get-Module -ListAvailable Az.Accounts ) ) {
 }
 #endregion
 
-$workspaceName = "SentinelWorkspaceName"
-$resourceGroup = "resourceGroup"
-$subscriptionId = "SubscriptionId"
+$workspaceName = "LAW-SecOps-Prod"
+$resourceGroup = "rg-secops-prod"
+$subscriptionId = "d680033d-8a87-4484-836a-99668acd3b09"
 
 $configRunContainer = New-PesterContainer -Path "*.Tests.ps1" -Data @{
     # Define your environment variables here
