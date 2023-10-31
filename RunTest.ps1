@@ -1,6 +1,6 @@
 #region Install required modules
 if ( -not ( Get-Module -ListAvailable Az.Accounts ) ) { 
-    Install-Module Az.Accounts -Force
+    Install-Module Az.Accounts -Force -AllowClobber
 }
 #endregion
 
@@ -15,7 +15,7 @@ $configRunContainer = New-PesterContainer -Path "*.Tests.ps1" -Data @{
     subscriptionId = $subscriptionId
 }
 
-Connect-AzAccount -DeviceCode
+Connect-AzAccount
 Set-AzContext -SubscriptionId $subscriptionId | Out-Null
 
 $config = New-PesterConfiguration -Hashtable @{
