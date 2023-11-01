@@ -16,11 +16,15 @@ BeforeDiscovery {
     # Define the Analytics rule ids that should be present and enabled
     $AnalyticsRuleIds = @(
         "BuiltInFusion",
-        "b38656e6-ee25-48f6-baee-741be171b174",
-        "0f897683-8af5-4e42-b256-98cc00c3e3c1",
-        "7a2a0966-8f10-4498-b627-b1dfd8186c83",
-        "8b713b44-6ee0-4c47-817a-d1b6b4213d8e",
-        "a4fe163e-aec6-407c-8240-ef280742a5f4"
+        "4f7e9626-cb71-472d-a16a-18506453b00c",
+        "0edb2b4b-c151-41ff-9815-90fd9835427d",
+        "c32afea6-34fe-418d-9d5f-66d737d54c08",
+        "e97e43f3-5be7-4487-b655-dac4e10d982d",
+        "ba46204e-0ebe-404c-8c31-995ba81c96d1",
+        "44a7cf22-9451-4ffc-9e98-ce1031c3ca3b",
+        "49bd1f7b-fc7b-4a57-ba94-f57183572afc",
+        "40702da1-ae8a-4e46-ac1f-9327ca6ef588",
+        "df3c57be-3378-4f5e-a9de-72fdf62e5044"
     )
 }
 
