@@ -1,12 +1,12 @@
 #region Install required modules
 if ( -not ( Get-Module -ListAvailable Az.Accounts ) ) { 
-    Install-Module Az.Accounts -Force
+    Install-Module Az.Accounts -Force -AllowClobber
 }
 #endregion
 
-$workspaceName = "SentinelWorkspaceName"
-$resourceGroup = "resourceGroup"
-$subscriptionId = "SubscriptionId"
+$workspaceName = "LAW-SecOps-Prod"
+$resourceGroup = "rg-secops-prod"
+$subscriptionId = "d680033d-8a87-4484-836a-99668acd3b09"
 
 $configRunContainer = New-PesterContainer -Path "*.Tests.ps1" -Data @{
     # Define your environment variables here
@@ -15,7 +15,7 @@ $configRunContainer = New-PesterContainer -Path "*.Tests.ps1" -Data @{
     subscriptionId = $subscriptionId
 }
 
-Connect-AzAccount -DeviceCode
+Connect-AzAccount
 Set-AzContext -SubscriptionId $subscriptionId | Out-Null
 
 $config = New-PesterConfiguration -Hashtable @{
@@ -23,7 +23,7 @@ $config = New-PesterConfiguration -Hashtable @{
         # Use the filter configuration to only specify the tests
         # This way you can easily remove e.g. specific dataconnectors from the test without mofiying the test itself
         # You will always have to modify the tests.ps1 file if you would like to remove specific tables it change the target configuration
-        Tag = "Configuration", "AnalyticsRules", "Watchlists", "AAD", "AADIPC", "AzureActivity", "DfC", "O365"
+        Tag = "Configuration", "AnalyticsRules", "Watchlists", "AAD", "AADIPC", "AzureActivity", "DfC", "O365", "M365", "DataConnectorsReqs"
     }
     TestResult = @{ Enabled = $true }
     Run        = @{

@@ -17,11 +17,11 @@ BeforeDiscovery {
     # Each watchlist entry must have the properties name and maxAgeInDays
     $WatchListConfigObjects = @(
         @{
-            "name"         = "IPAddresses"
-            "maxAgeInDays" = "14"
+            "name"         = "BUI_localIPs"
+            "maxAgeInDays" = "365"
         }
         @{
-            "name"         = "HighRiskApps"
+            "name"         = "IOC_domain"
             "maxAgeInDays" = "365"
         }
     )
