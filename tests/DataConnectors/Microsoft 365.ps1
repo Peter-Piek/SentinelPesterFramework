@@ -26,7 +26,7 @@ BeforeAll {
 
 Describe "Sentinel Dataconnectors" -Tag "DataConnector" {
 
-    Describe "Office 365 should be connected" -Tag "O365" {
+    Describe "Office 365 should be connected" -Tag "M365" {
 
         It "Office 365 OfficeActivity (SharePoint) should have current data (1d)" -Tag "O365-SharePoint" {
             $FirstRowReturned = Invoke-WorkspaceQuery -WorkspaceQueryUri $WorkspaceQueryUri -Query 'OfficeActivity | where TimeGenerated > ago(1d) | where OfficeWorkload == "SharePoint" or OfficeWorkload == "OneDrive" | summarize max(TimeGenerated)' | Select-Object -First 1

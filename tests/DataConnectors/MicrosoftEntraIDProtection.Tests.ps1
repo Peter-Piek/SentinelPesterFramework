@@ -26,7 +26,7 @@ BeforeAll {
 
 Describe "Sentinel Dataconnectors" -Tag "DataConnector" {
 
-    Describe "Azure AD Identity Protection should be connected" -Tag "AADIPC" {
+    Describe "Azure AD Identity Protection should be connected" -Tag "EntraIDProtection" {
         It "SecurityAlert (AADIPC) should have current data" {
             $FirstRowReturned = Invoke-WorkspaceQuery -WorkspaceQueryUri $WorkspaceQueryUri -Query "SecurityAlert | where TimeGenerated > ago(90d) | where ProductName == 'Azure Active Directory Identity Protection' | summarize max(TimeGenerated)" | Select-Object -First 1
             $FirstRowReturned | Should -Not -BeNullOrEmpty

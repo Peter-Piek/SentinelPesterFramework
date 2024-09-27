@@ -24,7 +24,7 @@ BeforeAll {
 }
 
 Describe "Sentinel Dataconnectors" -Tag "DataConnector" {
-    Describe "Azure Active Directory should be connected" -Tag "AAD" {
+    Describe "Azure Active Directory should be connected" -Tag "EntraID" {
         It "<name> should have current data (<maxage>)" -ForEach @(
             @{ Name = "SigninLogs" ; MaxAge = "1d" }
             @{ Name = "AuditLogs" ; MaxAge = "1d" }

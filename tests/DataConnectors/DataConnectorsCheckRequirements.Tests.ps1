@@ -34,6 +34,8 @@ BeforeDiscovery {
         "OfficePowerBI",
         "ThreatIntelligence",
         "ThreatIntelligenceTaxii"
+        "AzureSQLDatabase"
+        "AzureKeyVault"
     )
 }
 

@@ -26,7 +26,7 @@ BeforeAll {
 
 Describe "Sentinel Dataconnectors" -Tag "DataConnector" {
 
-    Describe "Microsoft Defender for Cloud Apps should be connected" -Tag "MDA" {
+    Describe "Microsoft Defender for Cloud Apps should be connected" -Tag "DCAS" {
         It "SecurityAlert (MDA) should have current data" {
             $FirstRowReturned = Invoke-WorkspaceQuery -WorkspaceQueryUri $WorkspaceQueryUri -Query "SecurityAlert | where TimeGenerated > ago(90d) | where ProductName == 'Microsoft Cloud App Security' | summarize max(TimeGenerated)" | Select-Object -First 1
             $FirstRowReturned | Should -Not -BeNullOrEmpty
